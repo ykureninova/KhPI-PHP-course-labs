@@ -4,7 +4,7 @@ session_start();
 //чи є кеш і чи не застарів
 if (isset($_SESSION['cached_data']) && isset($_SESSION['cached_time'])) {
     $age = time() - $_SESSION['cached_time'];
-    if ($age < 30) { //менше 10 хв
+    if ($age < 600) { //менше 10 хв
         $data = $_SESSION['cached_data'];
         $source = 'з кешу сесії';
     } else {
